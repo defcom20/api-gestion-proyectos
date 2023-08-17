@@ -1,0 +1,48 @@
+models:
+  TypeState:
+    name: string:20
+  Category:
+    name: string:20
+  Priority:
+    name: string:20
+  Role:
+    name: string:20
+  Task:
+    description: text
+    category_id: id
+    type_state_id: id
+  Proyect:
+    name: string:25
+    description: text
+    type_state_id: id
+  Member:
+    name: string:25
+    lastname: string:25
+    type_state_id: id
+  ProyectMember:
+    proyect_id: id
+    member_id: id
+  ProyectTask:
+    proyect_member_id: id
+    task_id: id
+    role_id: id
+    priority_id: id
+    due_date: date
+    type_state_id: id
+controllers:
+  TypeState:
+    resource: api
+  Category:
+    resource: api
+  Priority:
+    resource: api
+  Role:
+    resource: api
+  Task:
+    resource: api
+  Proyect:
+    resource: api
+  Member:
+    resource: api
+
+seeders: TypeState, Category, Priority, Role, Task, Proyect, Member

@@ -1,0 +1,90 @@
+created:
+    - app/Http/Controllers/TypeStateController.php
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/PriorityController.php
+    - app/Http/Controllers/RoleController.php
+    - app/Http/Controllers/TaskController.php
+    - app/Http/Controllers/ProyectController.php
+    - app/Http/Controllers/MemberController.php
+    - database/factories/TypeStateFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/PriorityFactory.php
+    - database/factories/RoleFactory.php
+    - database/factories/TaskFactory.php
+    - database/factories/ProyectFactory.php
+    - database/factories/MemberFactory.php
+    - database/factories/ProyectMemberFactory.php
+    - database/factories/ProyectTaskFactory.php
+    - database/migrations/2023_08_17_133505_create_type_states_table.php
+    - database/migrations/2023_08_17_133506_create_categories_table.php
+    - database/migrations/2023_08_17_133507_create_priorities_table.php
+    - database/migrations/2023_08_17_133508_create_roles_table.php
+    - database/migrations/2023_08_17_133509_create_tasks_table.php
+    - database/migrations/2023_08_17_133510_create_proyects_table.php
+    - database/migrations/2023_08_17_133511_create_members_table.php
+    - database/migrations/2023_08_17_133512_create_proyect_members_table.php
+    - database/migrations/2023_08_17_133513_create_proyect_tasks_table.php
+    - app/Models/TypeState.php
+    - app/Models/Category.php
+    - app/Models/Priority.php
+    - app/Models/Role.php
+    - app/Models/Task.php
+    - app/Models/Proyect.php
+    - app/Models/Member.php
+    - app/Models/ProyectMember.php
+    - app/Models/ProyectTask.php
+    - database/seeders/TypeStateSeeder.php
+    - database/seeders/CategorySeeder.php
+    - database/seeders/PrioritySeeder.php
+    - database/seeders/RoleSeeder.php
+    - database/seeders/TaskSeeder.php
+    - database/seeders/ProyectSeeder.php
+    - database/seeders/MemberSeeder.php
+    - tests/Feature/Http/Controllers/TypeStateControllerTest.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/PriorityControllerTest.php
+    - tests/Feature/Http/Controllers/RoleControllerTest.php
+    - tests/Feature/Http/Controllers/TaskControllerTest.php
+    - tests/Feature/Http/Controllers/ProyectControllerTest.php
+    - tests/Feature/Http/Controllers/MemberControllerTest.php
+    - app/Http/Requests/TypeStateStoreRequest.php
+    - app/Http/Requests/TypeStateUpdateRequest.php
+    - app/Http/Requests/CategoryStoreRequest.php
+    - app/Http/Requests/CategoryUpdateRequest.php
+    - app/Http/Requests/PriorityStoreRequest.php
+    - app/Http/Requests/PriorityUpdateRequest.php
+    - app/Http/Requests/RoleStoreRequest.php
+    - app/Http/Requests/RoleUpdateRequest.php
+    - app/Http/Requests/TaskStoreRequest.php
+    - app/Http/Requests/TaskUpdateRequest.php
+    - app/Http/Requests/ProyectStoreRequest.php
+    - app/Http/Requests/ProyectUpdateRequest.php
+    - app/Http/Requests/MemberStoreRequest.php
+    - app/Http/Requests/MemberUpdateRequest.php
+    - app/Http/Resources/TypeStateCollection.php
+    - app/Http/Resources/TypeStateResource.php
+    - app/Http/Resources/CategoryCollection.php
+    - app/Http/Resources/CategoryResource.php
+    - app/Http/Resources/PriorityCollection.php
+    - app/Http/Resources/PriorityResource.php
+    - app/Http/Resources/RoleCollection.php
+    - app/Http/Resources/RoleResource.php
+    - app/Http/Resources/TaskCollection.php
+    - app/Http/Resources/TaskResource.php
+    - app/Http/Resources/ProyectCollection.php
+    - app/Http/Resources/ProyectResource.php
+    - app/Http/Resources/MemberCollection.php
+    - app/Http/Resources/MemberResource.php
+updated:
+    - routes/api.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    TypeState: { name: 'string:20' }
+    Category: { name: 'string:20' }
+    Priority: { name: 'string:20' }
+    Role: { name: 'string:20' }
+    Task: { description: text, category_id: id, type_state_id: id }
+    Proyect: { name: 'string:25', description: text, type_state_id: id }
+    Member: { name: 'string:25', lastname: 'string:25', type_state_id: id }
+    ProyectMember: { proyect_id: id, member_id: id }
+    ProyectTask: { proyect_member_id: id, task_id: id, role_id: id, priority_id: id, due_date: date, type_state_id: id }
