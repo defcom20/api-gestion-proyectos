@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PriorityController;
+use App\Http\Controllers\ProyectController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TypeStateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,16 +22,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::apiResource('type-state', App\Http\Controllers\TypeStateController::class);
-
-Route::apiResource('category', App\Http\Controllers\CategoryController::class);
-
-Route::apiResource('priority', App\Http\Controllers\PriorityController::class);
-
-Route::apiResource('role', App\Http\Controllers\RoleController::class);
-
-Route::apiResource('task', App\Http\Controllers\TaskController::class);
-
-Route::apiResource('proyect', App\Http\Controllers\ProyectController::class);
-
-Route::apiResource('member', App\Http\Controllers\MemberController::class);
+Route::apiResource('type-state', TypeStateController::class);
+Route::apiResource('category', CategoryController::class);
+Route::apiResource('priority', PriorityController::class);
+Route::apiResource('role', RoleController::class);
+Route::apiResource('task', TaskController::class);
+Route::apiResource('proyect', ProyectController::class);
+Route::apiResource('member', MemberController::class);

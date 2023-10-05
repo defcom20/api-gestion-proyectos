@@ -21,7 +21,23 @@ class TypeStateFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->randomElement([
+                'Inicial',
+                'En Progreso',
+                'Revisión',
+                'Aprobado',
+                'Rechazado',
+                'Completado',
+                'Pendiente',
+                'Archivado',
+                'Cancelado',
+                'En Espera',
+                'Postergado',
+                'En Análisis',
+                'En Pruebas',
+                'Desplegado',
+                'Cerrado'
+            ]),
         ];
     }
 }

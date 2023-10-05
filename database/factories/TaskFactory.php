@@ -23,7 +23,23 @@ class TaskFactory extends Factory
     public function definition(): array
     {
         return [
-            'description' => $this->faker->text,
+            'description' => $this->faker->randomElement([
+                'Desarrollar la función de inicio de sesión',
+                'Diseñar la página de inicio',
+                'Realizar pruebas en el módulo de registro',
+                'Actualizar la documentación del API',
+                'Revisar el rendimiento de la base de datos',
+                'Optimizar las imágenes del sitio web',
+                'Implementar la función de recuperación de contraseña',
+                'Corregir errores en la página de perfil',
+                'Añadir validación en el formulario de contacto',
+                'Investigar nuevas tecnologías para el frontend',
+                'Preparar presentación para los stakeholders',
+                'Planificar la próxima reunión de equipo',
+                'Revisar y responder correos de soporte',
+                'Realizar una auditoría de seguridad',
+                'Crear una estrategia de marketing para el próximo trimestre'
+            ]),
             'category_id' => Category::factory(),
             'type_state_id' => TypeState::factory(),
         ];

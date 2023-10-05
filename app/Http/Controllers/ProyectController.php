@@ -8,37 +8,36 @@ use App\Http\Resources\ProyectCollection;
 use App\Http\Resources\ProyectResource;
 use App\Models\Proyect;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class ProyectController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request): ProyectCollection
     {
         $proyects = Proyect::all();
 
         return new ProyectCollection($proyects);
     }
 
-    public function store(ProyectStoreRequest $request): Response
+    public function store(ProyectStoreRequest $request)
     {
+
         $proyect = Proyect::create($request->validated());
-
         return new ProyectResource($proyect);
     }
 
-    public function show(Request $request, Proyect $proyect): Response
+    public function show(Request $request, Proyect $proyect): ProyectResource
     {
         return new ProyectResource($proyect);
     }
 
-    public function update(ProyectUpdateRequest $request, Proyect $proyect): Response
+    public function update(ProyectUpdateRequest $request, Proyect $proyect): ProyectResource
     {
         $proyect->update($request->validated());
 
         return new ProyectResource($proyect);
     }
 
-    public function destroy(Request $request, Proyect $proyect): Response
+    public function destroy(Request $request, Proyect $proyect)
     {
         $proyect->delete();
 

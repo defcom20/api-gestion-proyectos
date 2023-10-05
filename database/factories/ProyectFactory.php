@@ -22,8 +22,30 @@ class ProyectFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'description' => $this->faker->text,
+            'name' => $this->faker->randomElement([
+                'E-Shop Proyecto',
+                'Blogging Central',
+                'MobiHealth App',
+                'TaskMaster Sistema',
+                'NewsHub Portal',
+                'PetSocial Red',
+                'FinAnalyzer Herramienta',
+                'MindfulApp Meditación',
+                'BookMeNow Reservas',
+                'EduOnline Plataforma',
+            ]),
+            'description' => $this->faker->randomElement([
+                'Plataforma de E-commerce',
+                'Sitio Web de Blogging',
+                'Aplicación Móvil de Salud',
+                'Sistema de Gestión de Proyectos',
+                'Portal de Noticias',
+                'Red Social para Mascotas',
+                'Herramienta de Análisis Financiero',
+                'App de Meditación y Bienestar',
+                'Sistema de Reservas en Línea',
+                'Plataforma de Aprendizaje en Línea',
+            ]),
             'type_state_id' => TypeState::factory(),
         ];
     }

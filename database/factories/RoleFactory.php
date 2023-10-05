@@ -21,7 +21,23 @@ class RoleFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
+            'name' => $this->faker->randomElement([
+                'Administrador',
+                'Gerente',
+                'Desarrollador',
+                'Diseñador',
+                'Analista',
+                'Tester',
+                'Soporte Técnico',
+                'Marketing',
+                'Ventas',
+                'Cliente',
+                'Usuario Invitado',
+                'Operador',
+                'Supervisor',
+                'Consultor',
+                'Ejecutivo'
+            ]),
         ];
     }
 }
